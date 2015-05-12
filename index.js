@@ -91,6 +91,7 @@
       }.bind(this);
       document.addEventListener("scroll", this._rcv_fn);
       window.addEventListener("resize", this._rcv_fn);
+      document.addEventListener("click", this._rcv_fn);
       if (checkNow) { this._rcv_fn(); }
     },
 
@@ -104,6 +105,7 @@
       if (this._rcv_fn) {
         document.removeEventListener("scroll", this._rcv_fn);
         window.removeEventListener("resize", this._rcv_fn);
+        document.removeEventListener("click", this._rcv_fn);
         this._rcv_fn = false;
       }
     }
